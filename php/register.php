@@ -1,3 +1,31 @@
+<?php
+// ini_set('display_errors', 1);	
+// include('connexion.php');
+
+// 	if($_POST['cu_areaOfCsecurity'] == 'choose'){
+// 		header('location:../register.php?error=You must choose a area Of Cyber security.');
+// 		exit;
+// 	}
+// 	if($_POST['cu_password'] != $_POST['cu_passwordConfirm']){
+// 		header('location:../register.php?error=Both passwords don\'t match.');
+// 		exit;
+// 	}
+
+// 	$reqCheckUsername = $bdd->prepare('SELECT COUNT(*) As c FROM customer WHERE cu_email = ?');
+// 	$reqCheckUsername->execute(array(htmlspecialchars($_POST['cu_email'])));
+// 	$reqCheckUsernameResult = $reqCheckUsername->fetch();
+// 	if($reqCheckUsernameResult['c'] > 0){
+// 		header('location:../register.php?error=The email already exists. Please choose another one.');
+// 		exit;
+// 	}
+// 	function cuRegistrationNumber(){
+// 		return 'CRU'.rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
+// 	}
+// 	$rq = $bdd->prepare('INSERT INTO customer(cu_firstName, cu_surname, cu_businessName, cu_jobTitle, cu_areaOfCsecurity, cu_email, cu_registrationNumber,cu_username, cu_password, dateOfRegistration) VALUES(?,?,?,?,?,?,?,?,?,NOW())');
+// 	$rq->execute(array(htmlspecialchars($_POST['cu_firstName']),  htmlspecialchars($_POST['cu_surname']), htmlspecialchars($_POST['cu_businessName']), htmlspecialchars($_POST['cu_jobTitle']), htmlspecialchars($_POST['cu_areaOfCsecurity']),  htmlspecialchars($_POST['cu_email']),  cuRegistrationNumber(), htmlspecialchars($_POST['cu_username']), md5($_POST['cu_password'])));
+
+// 	header('location:../register.php?success=Your account is successfuly created.');
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +36,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
 
     <title>CSecurity!</title>
   </head>
@@ -50,53 +78,47 @@
     </nav>
     <div class="container">
       <div class="row mt-5">
-        <div class="col form-register">
+        <div class="col">
           <small id="emailHelp" class="form-text mb-3">Fill the form</small>
           <form>
             <div class="form-group">
-              <label for="exampleInputEmail1">First Name <span class="text-danger">*</span></label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Bussines Name</label>
-              <input type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Area Of CyberSecurity</label>
-               <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Username</label>
-              <input type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Confirm Your Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            
-        </div>
-        <div class="col form-register">
-          <div class="form-group">
-              <label for="exampleInputEmail1">Surname</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Job Title</label>
-              <input type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            
+        </div>
+        <div class="col">
+          <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>          
         </div>
       </div> <!-- form register -->
